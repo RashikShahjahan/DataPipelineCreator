@@ -1,7 +1,8 @@
 # Personal Data Processing and Machine Learning Pipeline
 
 This project provides an open-source, self-hosted framework for creating data pipelines for personal data, such as personal health data. The framework allows you to execute a series of Python scripts in a specific order, as defined by a prerequisite map. The scripts can be used for data processing and machine learning tasks, such as data preprocessing, feature engineering, model training, model evaluation, and anomaly detection.
-Requirements
+
+## Requirements
 
     Python 3.7 or higher
     Ray library
