@@ -64,8 +64,7 @@ Write your scripts following the structure shown in the example below. Each scri
     python3 pipeline_creator.py pipeline.json input.csv
 
 
-The script will execute the scripts in your pipeline in the order defined by the prerequisite map. The output of each script will be saved to a CSV file, which will be used as the input for the next script in the pipeline.
-
+The script will execute the scripts in your pipeline in the order defined by the prerequisite map. The interaction between the scripts can be specified by the user.
 ## Privacy
 
 As this is a self-hosted solution, all your personal data stays with you. The pipeline runs locally on your machine or on a server you control. No data is sent to any third-party servers.
