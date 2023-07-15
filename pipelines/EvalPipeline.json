@@ -1,0 +1,14 @@
+{
+    "DataPreprocessing": {
+        "host": "localhost",
+        "prerequisites": []
+    },
+    "FeatureEngineering": {
+        "host": "localhost",
+        "prerequisites": ["DataPreprocessing"]
+    },
+    "AnomalyDetection": {
+        "host": "localhost",
+        "prerequisites": ["FeatureEngineering"]
+    }
+}

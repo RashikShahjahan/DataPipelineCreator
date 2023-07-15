@@ -1,0 +1,15 @@
+{
+    "DataPreprocessing": {
+        "host": "localhost",
+        "prerequisites": []
+    },
+    "FeatureEngineering": {
+        "host": "localhost",
+        "prerequisites": ["DataPreprocessing"]
+    },
+    "ModelTraining": {
+        "host": "localhost",
+        "prerequisites": ["FeatureEngineering"]
+    }
+}
+

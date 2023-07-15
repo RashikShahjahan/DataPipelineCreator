@@ -1,0 +1,18 @@
+{
+    "StepA": {
+        "host": "localhost",
+        "prerequisites": []
+    },
+    "StepB": {
+        "host": "localhost",
+        "prerequisites": ["StepA"]
+    },
+    "StepC": {
+        "host": "localhost",
+        "prerequisites": ["StepA"]
+    },
+    "StepD": {
+        "host": "localhost",
+        "prerequisites": ["StepB", "StepC"]
+    }
+}
