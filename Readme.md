@@ -58,7 +58,7 @@ Write your scripts following the structure shown in the example below. Each scri
     main(sys.argv[1], sys.argv[2])
 
 
- Run the main script with the path to your pipeline JSON file and the path to your input CSV file as command-line arguments:
+ Run the main script with the path to your pipeline JSON file and the path to your input data file as command-line arguments:
 
 
     python3 pipeline_creator.py pipeline.json input.csv

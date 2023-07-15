@@ -4,6 +4,7 @@ import networkx as nx
 from collections import defaultdict
 import ray
 import subprocess
+import os
 
 def load_json_file(file_path):
     with open(file_path, 'r') as file:
@@ -49,7 +50,7 @@ def execute_level(scripts_with_io):
 def main():
     ray.init(address='auto')
     file_path = 'pipelines/'+sys.argv[1]  # replace with your file path
-    input_csv = 'inputs/'+sys.argv[2] # replace with your input CSV file path
+    input_data = 'inputs/'+sys.argv[2] # replace with your input CSV file path
     prerequisite_map = load_json_file(file_path)
     graph, host_map = create_directed_graph(prerequisite_map)
     ordering = get_levelwise_ordering(graph)
@@ -58,11 +59,12 @@ def main():
         level = len(nx.ancestors(graph, node))
         level_dict[level].append(node + ".py")
 
-    input_data = input_csv
     for level in sorted(level_dict.keys()):
         output_files = []
         for script in level_dict[level]:
-            output_file = f'outputs/{script[:-3]}_output_{level}.csv'
+            # Use the same file extension as the input file
+            extension = os.path.splitext(input_data)[1]
+            output_file = f'outputs/{script[:-3]}_output_{level}{extension}'
             output_files.append(output_file)
         input_data = execute_level([(script, input_data, output_file, host_map[script[:-3]]) for script, output_file in zip(level_dict[level], output_files)])
         input_data = input_data[-1] if input_data else None
