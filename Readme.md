@@ -44,7 +44,7 @@ Define your pipeline in a JSON file. Each key in the JSON file represents a scri
     }
 
 
-Write your scripts following the structure shown in the example below. Each script should take an input file and an output file as command-line arguments, perform some operation on the input data, and write the result to the output file:
+Write your scripts following the structure shown in the example below:
 
 
     import sys
